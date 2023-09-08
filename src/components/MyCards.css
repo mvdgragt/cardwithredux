@@ -1,0 +1,233 @@
+/* Base STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+
+:root {
+  --white: #ffffff;
+  --violet: #e2d8fd;
+  --dark-blue: #16044a;
+  --gray1: #e1e1e1;
+  --gray2: #0e0244;
+}
+
+html {
+  font-size: 62, 5%;
+}
+
+
+/* main content */
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* card */
+.scene {
+  width: 100%;
+  max-width: 35rem;
+  height: 190px;
+  margin: 0 auto;
+  perspective: 600px;
+}
+
+.card {
+  width: 320px;
+  height: 190px;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: -15px 20px 20px rgba(22, 4, 74, 0.15);
+  background: #afafaf;
+}
+
+.handelsbanken {
+  background-image: linear-gradient(43deg, #508eac, #39717a, #8ca7ad, #9fb4b6);
+}
+
+.swedbank {
+  background: linear-gradient(
+    43deg,
+    #f26822,
+    #fdb731,
+    #f3cf86,
+    #fdb731,
+    #f26822
+  );
+}
+.icabank {
+  background-image: linear-gradient(43deg, #424949, #d0d3d4, #909497, #5f6a6a);
+}
+.nordea {
+  background-image: linear-gradient(
+    30deg,
+    #000033,
+    #4a148c,
+    #311b92,
+    rgb(68, 68, 161),
+    #5b6bfa
+  );
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card__front,
+.card__back {
+  width: 320px;
+  height: 190px;
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card__front {
+  padding: 0 2rem;
+}
+
+.card-front:hover {
+  margin-top: -230px;
+}
+
+.card-logo {
+  width: 100px;
+  height: 20px;
+  margin-top: 23px;
+  position: absolute;
+  right: 30px;
+}
+.chip {
+  height: 3rem;
+  margin-top: 10px;
+  position: absolute;
+  left: 30px;
+}
+.master-card {
+  height: 4rem;
+  margin-top: 10px;
+  position: absolute;
+  left: 130px;
+  bottom: 22px;
+}
+
+.NFC {
+  height: 3rem;
+  margin-top: 10px;
+  position: absolute;
+  left: 70px;
+  color: #fff;
+}
+.card-logo .chip {
+  position: absolute;
+}
+.card__number {
+  display: flex;
+  justify-content: space-between;
+  text-shadow: 0 2px 1px rgba(6, 1, 49, 0.333);
+  margin-top: 72px;
+  min-height: 25px;
+}
+
+.number-group,
+.card__holder__name,
+.card__expiration__date {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-shadow: 0 1.2px var(--gray2);
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.card__details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__holder,
+.card__expiration {
+  display: flex;
+  flex-direction: column;
+  margin-top: 44px;
+}
+
+.card__holder__title,
+.card__expiration__title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verfana, sans-serif;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  opacity: 0.7;
+  font-size: 10px;
+  margin-bottom: 0.2rem;
+}
+.card__holder__name,
+.card__expiration__date {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+/* Card back */
+
+.card__back {
+  padding-top: 2rem;
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__stripe {
+  height: 2rem;
+  background: var(--gray1);
+}
+
+.card__signature {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2rem;
+  background: silver;
+  margin: 15px 20px;
+  padding-right: 1rem;
+  font-size: 15px;
+}
+.card__cvv,
+.card__cvv-number,
+.card__info {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.card__cvv,
+.card__cvv-number {
+  display: flex;
+  justify-content: space-between;
+  text-shadow: 0 2px 1px #0005;
+}
+.card__cvv {
+  margin-right: 0.1rem;
+  font-size: 15px;
+}
+
+.card__info {
+  font-size: 0.5rem;
+  padding: 11px 20px 1px 20px;
+  color: var(--white);
+}
+
+.valid {
+  display: block;
+  width: 140px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
