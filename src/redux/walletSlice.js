@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import mastercardImage from "../images/mastercardlogo.png";
+import swedbankImage from "../images/swedbank.png";
 
 export const getUser = createAsyncThunk("wallet/getUser", async () => {
   return fetch("https://randomuser.me/api/").then((response) =>
@@ -11,9 +13,9 @@ const walletSlice = createSlice({
   initialState: {
     activeCards: [
       {
-        vendor: "https://vandergragt.eu/images/mastercard.png",
+        vendor: mastercardImage,
         bank: "swedbank",
-        logo: "https://vandergragt.eu/images/swedbank.png",
+        logo: swedbankImage,
         cardNumber: "4431441314123416".match(/.{1,4}/g).join(" "),
         name: "",
         expiryMonth: "12",
