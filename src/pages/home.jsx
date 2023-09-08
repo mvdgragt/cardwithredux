@@ -45,22 +45,13 @@ const Home = () => {
           <p>{errorMessage}</p>
         </div>
       </div>
-      <Link
-        to="/addcard"
-        onClick={(e) => {
-          if (inactiveCards.length >= 3) {
-            setErrorMessage(
-              "Max 4 cards - remove one to add another!"
-            );
-            setTimeout(() => {
-              setErrorMessage("");
-            }, 3000);
-            e.preventDefault();
-          }
-        }}
-      >
-        <button id="newCardBtn">Add a new card</button>
-      </Link>
+      {inactiveCards.length < 3 ? (
+        <Link to="/addcard">
+          <button id="newCardBtn">Add a new card</button>
+        </Link>
+      ) : (
+        <p>Max 4 cards - remove one to add another!</p>
+      )}
     </div>
   );
 };
