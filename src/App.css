@@ -57,9 +57,9 @@ label {
   width: 100%;
 }
 
-#wrapper {
+/* #wrapper {
   min-height: 665px;
-}
+} */
 
 #inputWrapper {
   min-height: 483px;
@@ -137,6 +137,11 @@ h1 {
 
 #container > :nth-child(4):not(:hover) {
   transition: 0.5s;
+}
+
+#newCardBtn {
+  position: fixed;
+  bottom: 0;
 }
 
 button {
