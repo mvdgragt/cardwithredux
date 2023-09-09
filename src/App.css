@@ -61,6 +61,9 @@ label {
   min-height: 665px;
 } */
 
+#comment {
+  padding-top: 10px;
+}
 #inputWrapper {
   min-height: 483px;
   margin-top: 40px;

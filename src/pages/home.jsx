@@ -14,6 +14,24 @@ const Home = () => {
   return (
     <div>
       <h1>E-Wallet</h1>
+      <Link
+        to="/addcard"
+        onClick={(e) => {
+          if (inactiveCards.length >= 3) {
+            setErrorMessage(
+              "Max 4 cards - remove one to add another!"
+            );
+            setTimeout(() => {
+              setErrorMessage("");
+            }, 3000);
+            e.preventDefault();
+          }
+        }}
+      >
+        <button id="">Add a new card</button>
+      </Link>
+      <p id="comment">Double click an inactive card to delete</p>
+
       <p className="small">Active card</p>
       <div id="wrapper">
         <div id="container">
@@ -45,22 +63,6 @@ const Home = () => {
           <p>{errorMessage}</p>
         </div>
       </div>
-      <Link
-        to="/addcard"
-        onClick={(e) => {
-          if (inactiveCards.length >= 3) {
-            setErrorMessage(
-              "Max 4 cards - remove one to add another!"
-            );
-            setTimeout(() => {
-              setErrorMessage("");
-            }, 3000);
-            e.preventDefault();
-          }
-        }}
-      >
-        <button id="newCardBtn">Add a new card</button>
-      </Link>
     </div>
   );
 };
