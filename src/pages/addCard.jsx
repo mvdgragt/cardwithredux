@@ -141,8 +141,9 @@ const AddCard = () => {
                 onFocus={flipCard}
                 style={{ border: validColor }}
               >
-                <option value="MM" disabled hidden>
-                  MM
+                <option 
+                value="MM" 
+                disabled hidden>
                 </option>
                 <option value="01">01</option>
                 <option value="02">02</option>
